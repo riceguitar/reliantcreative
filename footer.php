@@ -25,9 +25,15 @@
 				</div>
 				<div class="col-md-3 col-md-offset-3">
 					<div class="site-info text-right">
+						<h3 class="credits-title">Have a nice day!</h3>
+
 						
 						<p>
-							&copy 2016 | Reliant Creative
+							Copyright 2016<br>
+							Reliant Creative is a 501(c)3
+						</p>
+						<p>
+							info@reliantcreative.org
 						</p>
 
 					</div><!-- .site-info -->
