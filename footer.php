@@ -24,10 +24,12 @@
 					<?php dynamic_sidebar( 'footer-2' ); ?>
 				</div>
 				<div class="col-md-3 col-md-offset-3">
-					<div class="site-info">
-						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'reliantcreative' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'reliantcreative' ), 'WordPress' ); ?></a>
-						<span class="sep"> | </span>
-						<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'reliantcreative' ), 'reliantcreative', '<a href="http://www.95west.co" rel="designer">95west</a>' ); ?>
+					<div class="site-info text-right">
+						
+						<p>
+							&copy 2016 | Reliant Creative
+						</p>
+
 					</div><!-- .site-info -->
 				</div>
 			</div>

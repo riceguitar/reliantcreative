@@ -199,3 +199,6 @@ function reliantcreative_posts() {
 
   register_post_type( 'portfolio', $args);
 }
+
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+

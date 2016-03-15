@@ -98,12 +98,12 @@ get_header(); ?>
 											<div class="col-md-4">
 												<?php $portlogo = get_field('client_logo'); ?>
 												<?php //print_r($portlogo); ?>
-												<img src="<?php echo $portlogo['url']; ?>" class="port-single-logo" />
+												<a href="<?php the_permalink(); ?>"><img src="<?php echo $portlogo['url']; ?>" class="port-single-logo" /></a>
 											</div>
 											<div class="col-md-6 col-md-offset-2">
 												
 												<div class="caption">
-													<h3><?php the_title(); ?></h3>
+													<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 													<?php 
 														$thestrong = get_field('project_description'); 
 														echo substr($thestrong, 0, 200). " ... " . substr($thestrong, -5);
