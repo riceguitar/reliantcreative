@@ -5,13 +5,17 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
+$color__sitefooter: #2c2c2c;
+$color__secondary: #f26d44;
+$color__primary: #47b7a9;
+
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color__link: $color__primary;
+$color__link-visited: $color__primary;
+$color__link-hover: $color__primary;
+$color__text-main: #333333;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;

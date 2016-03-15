@@ -107,6 +107,24 @@ function reliantcreative_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'reliantcreative' ),
+		'id'            => 'footer-1',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'reliantcreative' ),
+		'id'            => 'footer-2',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'reliantcreative_widgets_init' );
 
@@ -114,7 +132,17 @@ add_action( 'widgets_init', 'reliantcreative_widgets_init' );
  * Enqueue scripts and styles.
  */
 function reliantcreative_scripts() {
+	wp_enqueue_style( 'reliantcreative-fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
+
+	wp_enqueue_style( 'reliantcreative-slickcss', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css' );
+
+	wp_enqueue_style( 'reliantcreative-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' );
+
 	wp_enqueue_style( 'reliantcreative-style', get_stylesheet_uri() );
+
+	//wp_enqueue_script('jquery', false, array(), false, false);
+	
+	wp_enqueue_script( 'reliantcreative-slick', '//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'reliantcreative-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -150,3 +178,24 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+* New Post Type for Portfolio
+*/
+add_action( 'init', 'reliantcreative_posts' );
+function reliantcreative_posts() {
+   $labels = array(
+    'name' => __( 'Portfolio Pieces' ),
+    'singular_name' => __( 'Client' )
+    );
+
+    $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'has_archive' => true,
+    'rewrite' => array('slug' => 'portfolio'),
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
+    );
+
+  register_post_type( 'portfolio', $args);
+}
